@@ -1,0 +1,51 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#2C4C3B, #6F957C);
+}
+
+.image {
+    width: 10%;
+    height: 10%;
+    display: block;
+    margin-left: 0.1%;
+    margin-top: 2%;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,.6));
+}
+
+.chat-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.submit-box {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    font-size: 30px;
+}
+
+input[type=submit] {
+    margin-left: 10px;
+    border-bottom: none;
+}
+
+.text {
+    color: #fff;
+}
