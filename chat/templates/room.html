@@ -13,9 +13,10 @@
         <div>
             <img src="{% static 'images/django-logo.png' %}" class="image"/>
         </div>
-        <div class="chat-box">
-            <h1 class="text">{{ room_name }}</h1>
 
+        <h1 class="text">Current Chatroom: {{ room_name }}</h1>
+
+        <div class="chat-box">
             <div id="display">
 
             </div>
@@ -40,7 +41,11 @@
                         $("#display").empty();
                         for (var key in response.messages)
                         {
-                            var temp="<div class='message'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].message+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
+                            if (response.messages[key].user == "{{ username }}") {
+                                var temp="<div class='message'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].message+"</p><span class='time-left'>"+response.messages[key].date.slice(11, 19)+"</span></div>";
+                            } else {
+                                var temp="<div class='message' id='other-user'><b>"+response.messages[key].user+"</b><p>"+response.messages[key].message+"</p><span class='time-left'>"+response.messages[key].date.slice(11, 19)+"</span></div>";
+                            }
                             $("#display").append(temp);
                         }
                     },
